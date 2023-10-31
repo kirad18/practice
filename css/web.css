@@ -1,0 +1,537 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+html{
+    background-color: black;
+}
+
+.banner{
+    width: 30%;
+    margin: auto;
+    text-align: center;
+    padding: 5%;
+    margin-bottom: 15%;
+}
+
+.banner img{
+    width: 100%;
+}
+
+.header{
+    background-color: rgba(0, 0, 0, 0.204);
+}
+
+.logo-nav-container {
+    /* display: grid;
+    grid-template-columns: auto 1fr; 
+    align-items: center;  */
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    align-items: center; 
+
+}
+
+.header .logo{
+    display: inline-block;
+    padding: 6px;
+}
+
+.header nav{
+    text-align: right;
+    width: 100%;
+    font-size: 0;
+}
+
+.header nav a{
+    display: inline-block;
+    line-height: 52px;
+    font-size: 16px ;
+    color: white;
+    text-decoration: none;
+    padding: 0 10px;
+    position: relative; 
+    line-height: 52px;
+}
+
+.header nav a:hover{
+    color: rgb(59, 59, 59);
+}
+
+/* 橘色底線 */
+.header nav a::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 5px; 
+    background-color: #f15a24; 
+    transition: width 0.3s; 
+}
+
+.header nav a:hover::before {
+    width: 50%; 
+}
+
+.scroll{
+    margin: auto;
+    text-align: center;
+    cursor: pointer;
+    margin-bottom: 15%;
+}
+
+.arrow {
+    float:center;
+    position:relative;
+    width: 0px;
+    height: 0px;
+    color: white;
+
+  /* border-style: solid;
+  border-width: 3em 3em 0 3em;
+  border-color: #ffffff transparent transparent transparent; */
+    -webkit-transform:rotate(360deg)
+  }
+
+  .arrow:after {
+    content: "";
+    display: block;
+    width: 2px; 
+    height: 80px; 
+    background-color: white; 
+    margin: 10px auto; 
+    
+  }
+
+.service{
+    padding: 40px 0 60px;
+}
+
+h2{
+    color: white;
+    font-size: 48px;
+    text-align: center;
+    width: 100%;
+    margin: auto;
+    font-family: 'Press Start 2P', serif;
+}
+
+h3{
+    color: white;
+    font-size: 24px;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
+
+.serviceBox{
+   display: flex;
+   flex-direction: column;
+   justify-content: space-evenly;
+   margin: auto;
+   width: 960px;
+
+}
+
+.item{
+    /* margin: 0 10px; */
+    display: flex;
+    text-align: left;
+    justify-content: space-evenly;
+    margin-bottom: 15%;
+    /* padding: 20px 0; */
+}
+
+.serviceContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.serviceTitle{
+  display:flex;
+  align-items: center; 
+  margin-bottom: 5%;
+}
+
+.serviceTitle h4 {
+    margin: 0; 
+    color: white;
+    font-size: 36px;
+}
+
+.serviceTitle img {
+    /* max-width: 100px;  */
+    margin-right: 10px; 
+}
+
+.serviceText::before {
+    content: "";
+    display: block;
+    width: 5px;
+    height: 100%; 
+    background-color: white; 
+    position: absolute;
+    top: 0;
+    left: -10px; 
+}
+
+.serviceText{
+    font-size: 16px;
+    color: white;
+    align-items: center; 
+    line-height: 1.5;
+    position: relative;
+    padding-left: 20px;
+    letter-spacing: 1.5px;
+}
+
+.showreel{
+    margin: 10% 0;
+}
+
+/* 輪播 */
+.sliderBox{
+    width: 100%;
+    padding: 100px 0;
+    margin: 5% 0;
+    background-color: #232323;
+}
+
+.slider-container {
+    display: flex;
+    align-items: center;
+    /* width: 80%; */
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden; 
+    position: relative;
+  }
+  
+  .slider-wrapper {
+    overflow: hidden; 
+    flex: 1;
+    /* margin:0 20px; */
+  }
+  
+  .controls {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  button {
+    border: none;
+    background: transparent;
+    font-size: 64px;
+    cursor: pointer;
+    font-weight: thin;
+    padding: 10px 20px;
+  }
+  
+  .prev {
+    left: 0;
+    color: #f15a24;
+    margin-left: 20px;
+  }
+  
+  .next {
+    right: 0;
+    color: #f15a24;
+    margin-right: 20px;
+  }
+  
+  .slider {
+    display: flex;
+    margin: 0 -10px;
+    transition: transform 0.5s;
+    cursor: pointer;
+  }
+  
+  .slide {
+    flex: 0 0 calc(33.33% - 20px); 
+    margin: 0 10px; 
+    transition: opacity 0.3s;
+    opacity: 0.5; 
+  }
+  
+  .slide img {
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+  }
+
+  .slide img:hover, .slide img.active{
+    border: 8px solid #f15a24;
+  }
+
+  .slide.active {
+    opacity: 1; 
+  }
+
+  .slide.inactive {
+    opacity: 0.5; 
+  }
+
+  .slide:hover {
+    opacity: 1;
+  }
+
+.slide:hover.active {
+    opacity: 1; 
+  }
+
+  .slideText{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2%;
+    cursor: pointer;
+  }
+  
+  .slideText>p{
+    font-size: 18px;
+    color: white;
+    display: inline-block;
+    margin-right: auto;
+  }
+
+  .slideText> p::before {
+    content: "";
+    display: inline-block;
+    width: 20px; 
+    height: 2px; 
+    background-color: white;
+    margin-right: 10px;
+    vertical-align:middle;
+  }
+
+  .view{
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center;
+  }
+
+  .view >p{
+    font-size: 14px;
+    color: white;
+  }
+
+  .view img {
+    width: 100%;
+    width: 15px;
+    display: block;
+  }
+
+  .checkMore{
+    width: 150px;
+    color: white;
+    font-size: 16px;
+    margin: auto;
+    text-align: center;
+    border: 1px solid rgb(194, 191, 191);
+    padding: 10px;
+    border-radius: 30px;
+    cursor: pointer;
+  }
+
+  .checkMore:hover, .checkMore.active{
+    border: 1px solid #f15a24;
+    color: #f15a24;
+  }
+
+  .team{
+     margin: 10% 0;
+  }
+
+  .teamBox{
+    display: flex;
+    justify-content: space-between; 
+    width: 960px;
+    margin: auto;
+  }
+
+.col{
+    flex: 1; 
+    background-color: #232323;
+    margin: 30px;
+    padding: 10px;
+    text-align: center; 
+    line-height: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    align-items: center;
+    margin-top: 10px; 
+    margin-bottom: 10px;
+  }
+
+.col img{
+    width: 45%;
+    margin: auto;
+  }
+
+  h4{
+    color:white;
+    font-size: 20px;
+    font-weight: 600;
+    position: relative;
+    left: -35%;
+  }
+
+   h4::before {
+    content: "";
+    display: inline-block;
+    width: 30px; 
+    height: 1px; 
+    background-color: white;
+    margin-right: 10px;
+    vertical-align:middle;
+
+  }
+
+  .colText{
+    text-align: left;
+    font-weight: 600;
+    font-size: 14px;
+    margin-top: 10%;
+  }
+
+  .colText>span{
+    color: white;
+  }
+
+  .colText >p{
+    color: gray;
+  }
+
+  .col:nth-child(2) {
+    margin-top: -20px; 
+  }
+  
+  .col:nth-child(3) {
+    margin-top: -40px;
+    transform: translateY(-20px); 
+    padding: 30px 20px; 
+  }
+
+.clearfix{
+    clear:both;
+    height: 0;
+  }
+
+.contact{
+    margin: 10% 0;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+ }
+
+ .leftBox{
+    background-color: white;
+    flex: 1; 
+    padding: 20px; 
+    line-height: 2;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr); 
+    gap: 10px; 
+ }
+
+ .rightBox{
+    background-color: #a82492;
+    flex: 1; 
+    padding: 20px; 
+
+ }
+
+.title{
+    margin: auto;
+}
+ .title >h2, .title >h3{
+    color: black;
+ }
+
+ .title >h2{
+    font-size: 28px;
+ }
+
+ .title >h3{
+    font-size: 14px;
+    font-weight: 600;
+    text-align: left;
+ }
+
+ .detail{
+    margin: auto;
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    width: 55%;
+ } 
+
+ .number {
+    display: flex;
+    color: #f15a24;
+    width: 60%;
+ }
+
+ .number span{
+    font-size: 24px;
+    font-weight: 600;
+ }
+
+
+ .number img{
+    width: 10%;
+ }
+
+ .address{
+    margin: auto;
+ }
+
+ 
+ .address >p{
+    text-align: left;
+    font-weight: 600;
+    font-size: 14px;
+ }
+
+ .address:after{
+    content: "";
+    display: inline-block;
+    width: 200px; 
+    height: 1px; 
+    background-color: gray;
+    margin-right: 10px;
+    vertical-align:middle;
+ }
+
+ .bottomLogo{
+    margin: auto;
+    text-align: left;
+ }
+
+ .footer{
+    text-align: center;
+    background-color: #000;
+    color: #888;
+    padding: 20px 0;
+}
+
+
+
+  
+  
+
+
+
+
